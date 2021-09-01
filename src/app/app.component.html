@@ -18,7 +18,7 @@
       <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5">
         <div class="list-group">
           <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
-           *ngFor="let artist of artists" (click)="showArtists(artist)" [style.backgroundColor]=" artist.highlight ? '#EEE':'#FFF' ">
+           *ngFor="let artist of (artists | searchArtists : query)" (click)="showArtists(artist)" [style.backgroundColor]=" artist.highlight ? '#EEE':'#FFF' ">
               <app-artist-item [artist] = "artist"></app-artist-item>
           </a><!-- link -->
         </div><!-- list-group -->
